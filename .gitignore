@@ -3,7 +3,6 @@
 .metadata
 .gradle
 tests/
-jni/
 bin/
 tmp/
 obj/
