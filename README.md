@@ -2,8 +2,6 @@
 
 <a href="https://assembly.com/nexus-gallery/bounties?utm_campaign=assemblage&utm_source=nexus-gallery&utm_medium=repo_badge"><img src="https://asm-badger.herokuapp.com/nexus-gallery/badges/tasks.svg" height="24px" alt="Open Tasks" /></a>
 
-## effortless. gesture based. deeply integrated into android.
-
 ## Eclipse Setup
 + import existing android code
 + add src_pd to build path as source folder
