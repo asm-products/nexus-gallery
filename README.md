@@ -9,7 +9,7 @@
 + from Eclipse File menu, got to New, and select Convert to a C/C++ Project
 + in the convert wizard, under Project type, select Makefile project
 + in the same wizard, under Toolchains, select Android GCC
-+ right click on project root and select Build All
++ right click on project root, from Build Configurations select Build All
 
 This is a product being built by the Assembly community. You can help push this idea forward by visiting [https://assembly.com/nexus-gallery](https://assembly.com/nexus-gallery).
 
