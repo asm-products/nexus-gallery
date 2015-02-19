@@ -170,7 +170,8 @@ public class ImageFilterGrad extends ImageFilterRS {
                 endy = height;
             }
             options.setY(ty, endy);
-            //mScript.forEach_selectiveAdjust(in, out, options);
+//            mScript.forEach_selectiveAdjust(in, out, options);
+            mScript.forEach_selectiveAdjust(in, out);
             if (checkStop()) {
                 return;
             }
