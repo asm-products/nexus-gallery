@@ -16,6 +16,8 @@
 
 package com.android.gallery3d.app;
 
+import java.io.File;
+
 import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -26,11 +28,11 @@ import com.android.gallery3d.data.ImageCacheService;
 import com.android.gallery3d.gadget.WidgetUtils;
 import com.android.gallery3d.picasasource.PicasaSource;
 import com.android.gallery3d.util.GalleryUtils;
-import com.android.gallery3d.util.LightCycleHelper;
 import com.android.gallery3d.util.ThreadPool;
 import com.android.gallery3d.util.UsageStatistics;
-
-import java.io.File;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Logger.LogLevel;
+import com.google.android.gms.analytics.Tracker;
 
 public class GalleryAppImpl extends Application implements GalleryApp {
 
@@ -51,6 +53,8 @@ public class GalleryAppImpl extends Application implements GalleryApp {
         WidgetUtils.initialize(this);
         PicasaSource.initialize(this);
         UsageStatistics.initialize(this);
+        
+        this.getAnalyticsTracker();
     }
 
     @Override
@@ -111,4 +115,20 @@ public class GalleryAppImpl extends Application implements GalleryApp {
         } catch (ClassNotFoundException e) {
         }
     }
+    
+    private Tracker getAnalyticsTracker() {
+    	if (mAnalyticsTracker == null) {
+    	    GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+    	    analytics.enableAutoActivityReports(this);
+    	    analytics.getLogger().setLogLevel(LogLevel.VERBOSE);
+
+    	    mAnalyticsTracker = analytics.newTracker(mTrackerID);
+    	    mAnalyticsTracker.enableAutoActivityTracking(true);
+    	    mAnalyticsTracker.enableExceptionReporting(true);
+    	}
+    	return mAnalyticsTracker;
+    }
+    
+    private Tracker mAnalyticsTracker;
+    private String mTrackerID = "UA-59522160-2";
 }
