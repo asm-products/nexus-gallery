@@ -130,5 +130,5 @@ public class GalleryAppImpl extends Application implements GalleryApp {
     }
     
     private Tracker mAnalyticsTracker;
-    private String mTrackerID = "UA-59522160-2";
+    private String mTrackerID = "UA-60124160-3";
 }

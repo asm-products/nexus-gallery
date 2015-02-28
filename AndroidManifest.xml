@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<manifest android:versionCode="50002"
-        android:versionName="1.2.2"
+<manifest android:versionCode="50003"
+        android:versionName="1.2.3"
         xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.radcam.gallery">
 
-    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="18" />
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="21" />
 
     <permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER"
             	android:protectionLevel="signatureOrSystem" />
